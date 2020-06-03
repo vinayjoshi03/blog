@@ -9,6 +9,7 @@
 
 module.exports = {
   tableName: 'users',
+  sync: true, // Here is essential part
   schema: true,
   attributes: {
    username: {
