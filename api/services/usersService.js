@@ -30,17 +30,9 @@ module.exports = {
             
             });
         });
-        /*this.generateSalt.then(function(result){
-            console.log('Encrypted data-->', result);
-            
-        }).catch(function(error){
-            console.log(error);
-        })*/
         
     },
     async checkUser(password, hash) {
-        console.log('password-->', password);
-        console.log('hash-->', hash);
         const match = await bcrypt.compare(password, hash);
         if(match) {
             return "match found";

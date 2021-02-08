@@ -20,7 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-  'GET /api/posts/getall': 'PostsController.getPosts',
+  'POST /api/posts/getall': 'PostsController.getPosts',
   'GET /api/posts/:postid': 'PostsController.getPostDetails',
   'POST /api/posts/create': 'PostsController.createNewPost',
   'POST /api/user/create': 'UsersController.createUser',

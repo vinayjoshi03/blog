@@ -1,7 +1,9 @@
 var _ = require('lodash');
 module.exports = {
-    getAllPosts() {
-        response = Posts.find().sort('createdAt DESC');
+    getAllPosts(currentPage=0) {
+        const limit = 5;
+        const skip = limit*currentPage;
+        response = Posts.find({ where: { status: 1 }, limit: limit, skip: skip }).sort('createdAt DESC');
         return response;
     },
     getSinglePost(postid) {
