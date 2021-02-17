@@ -24,7 +24,7 @@ module.exports.routes = {
   'GET /api/posts/:postid': 'PostsController.getPostDetails',
   'POST /api/posts/create': 'PostsController.createNewPost',
   'POST /api/user/create': 'UsersController.createUser',
-  'POST /api/posts/login': 'UsersController.loginAction',
+  'POST /api/user/login': 'UsersController.loginAction',
   'DELETE /api/posts/delete': 'PostsController.deletePost',
 
 

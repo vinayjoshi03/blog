@@ -1,7 +1,8 @@
 var _ = require('lodash');
 module.exports = {
     getAllPosts(currentPage=0) {
-        const limit = 5;
+        console.log("Current page-->", currentPage);
+        const limit = 10;
         const skip = limit*currentPage;
         response = Posts.find({ where: { status: 1 }, limit: limit, skip: skip }).sort('createdAt DESC');
         return response;
@@ -19,6 +20,7 @@ module.exports = {
         return response;
     },
     deletePost(data) {
+        console.log("Delete");
         return Posts.destroyOne({where:data});
     }
 }

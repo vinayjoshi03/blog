@@ -12,7 +12,6 @@ module.exports = {
     },
 
     async createNewPost(req, res) {
-        console.log("API Log-->",req.body);
         let postCreated = await postsService.submitPost(req.body.postData);
         
         let allPostCount = await postsService.getAllPostCount();
@@ -21,9 +20,11 @@ module.exports = {
     },
 
     async deletePost(req, res) {
-        let postDeleted = await postsService.deletePost(req.body);
+        let postDeleted = await postsService.deletePost(req.body.id);
+        const allPostCount = await postsService.getAllPostCount();
+        postDeleted.totalPostCount = allPostCount;
         if (postDeleted !== undefined) {
-            return res.ok({ message: "Post created successfullt ", data: postDeleted });
+            return res.ok({ message: "Post created successfullt", data: postDeleted });
         } else {
             return res.error();({ message: "Unable to delete post", data: postDeleted });
         }

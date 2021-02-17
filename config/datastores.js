@@ -50,7 +50,8 @@ module.exports.datastores = {
     ***************************************************************************/
      adapter: 'sails-mysql',
      url: 'mysql://root:@localhost:3306/blog',
-     //url:'mysql://root:Root2020@mydb.cfxrliyvbnmp.us-east-2.rds.amazonaws.com:3306/mydb'
+     // https://www.freemysqlhosting.net/ free database
+     //url:'mysql://sql12391780:A1qa7Sakav@sql12.freemysqlhosting.net:3306/sql12391780'
 
   },
 
